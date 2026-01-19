@@ -1,8 +1,14 @@
 [
   {
-    "name": "ICSI | CNSS Certified Network Security Specialist",
-    "issuer": "DefensityOne",
-    "date": "Jun 2020",
+    "name": "AWS Certified Cloud Practitioner",
+    "issuer": "Amazon Web Services",
+    "date": "2024",
+    "credentialUrl": ""
+  },
+  {
+    "name": "Cisco Certified Network Professional (CCNP)",
+    "issuer": "Cisco",
+    "date": "2022",
     "credentialUrl": ""
   },
   {
@@ -12,9 +18,9 @@
     "credentialUrl": ""
   },
   {
-    "name": "Cisco Certified Network Professional (CCNP)",
-    "issuer": "Cisco",
-    "date": "2022",
+    "name": "ICSI | CNSS Certified Network Security Specialist",
+    "issuer": "DefensityOne",
+    "date": "Jun 2020",
     "credentialUrl": ""
   }
 ]

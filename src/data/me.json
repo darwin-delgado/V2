@@ -2,20 +2,20 @@
   "name": "Darwin",
   "fullName": "Darwin Delgado",
   "subtitle": "Ingeniero de Infraestructura/Devops",
-  "email": "dsdelgadomo@gmail.com",
+  "email": "",
   "description": "Especialista en Infraestructura Linux (Red Hat) | DevOps | Automatización (Ansible, Bash) | Contenedores (Docker/Docker Compose) | Virtualización (KVM, Proxmox, vSphere) | Observabilidad (Grafana, Prometheus, Zabbix) | Cloud: AWS, Azure",
   "currentJob": "Ingeniero de Infraestructura",
   "currentCompany": "<a href='https://www.bancounion.com/wps/portal/bancounion/web/inicio/' class='text-green-700 dark:text-[#66BB6A] font-semibold' target='_blank'>Banco Unión S.A.</a>",
   "jobDescription": "Responsabilidad en la gestión de servidores Redhat Linux y Windows Server, virtualización Oracle/KVM, administración de clúster Oracle 19c sobre KVM, contenedores Docker, automatización con Ansible, monitorización y soporte de infraestructura en la nube.",
-  "github": "dsdelgadom",
-  "linkedin": "darwindelgado",
+  "github": "dwsdelgado",
+  "linkedin": "dwsdelgado",
   "website": "darwindelgado.com",
   "firstJobDate": "2020-02-01",
   "currentlyLearning": [
-    "AWS Cloud (Certificación en curso)",
-    "Kubernetes",
-    "Infraestructura como Código (IaC)",
-    "Avanzando en DevOps Pipelines"
+    "Kubernetes & EKS",
+    "Terraform (IaC)",
+    "CI/CD Pipelines",
+    "AWS Solutions Architect"
   ],
   "techPreferences": [
  {
