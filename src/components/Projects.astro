@@ -1,161 +1,79 @@
 ---
 import projects from '@/data/projects.json'
-import MobileStoreBadges from './ui/MobileStoreBadges.astro'
 import Skills from './ui/Skills.astro'
-import { Icon } from 'astro-icon/components'
 import { Image } from 'astro:assets'
 import { getImageFromAssets } from '@/utils'
 
 const { condensed = false } = Astro.props
-
 const items = condensed ? projects.slice(0, 3) : projects
 ---
 
 <section
-	class:list={['pb-20 scroll-m-32', Astro.props.class]}
+	class:list={['py-20 scroll-m-32', Astro.props.class]}
 	id="projects"
 >
 	<div class="space-y-12 animate">
 		<div class="text-center space-y-4">
 			<h2 class="section-title">Proyectos Destacados</h2>
-			<p class="text-stone-600 dark:text-stone-400 text-lg max-w-3xl mx-auto">
-				Una colección de trabajos que demuestra mi pasión por crear.
+			<p class="text-stone-600 dark:text-stone-400 max-w-2xl mx-auto">
+				Proyectos de infraestructura y DevOps que demuestran mi experiencia técnica
 			</p>
 		</div>
 
-		<div class='grid gap-8 '>
-		{
-			items.map((project, index) => (
-				<div class="card p-8 group hover:shadow-xl">
-					<div
-						class:list={[
-							'grid gap-8 items-center',
-							project.demoImage || project.demoVideo || project.demoIframe
-								? 'lg:grid-cols-2'
-								: 'grid-cols-1',
-						]}
-					>
-						<div class="space-y-6">
-							<div class="space-y-4">
-								<div class="flex items-center gap-3 flex-wrap">
-									{project.logoUrl && (
-										<Image
-											src={getImageFromAssets(project.logoUrl)}
-											alt={`Logo - ${project.title}`}
-											class="rounded-lg shadow-xs"
-											width={48}
-											height={48}
-											loading={index === 0 ? 'eager' : 'lazy'}
-										/>
-									)}
-									<div class="flex">
-										<h3 class="text-xl font-medium text-stone-900 dark:text-stone-100 group-hover:text-stone-700 dark:group-hover:text-stone-300 transition-colors">
-											<a
-												href={project.url}
-												class="flex items-center gap-2"
-												target="_blank"
-												rel="noopener noreferrer"
-											>
-												{project.title}
-												<Icon name="carbon:launch" class="size-4 opacity-60 group-hover:opacity-100 transition-opacity" />
-											</a>
-										</h3>
-										{project.date && (
-											<p class="text-stone-500 dark:text-stone-400 text-sm font-medium">
-												{project.date}
-											</p>
+		<div class="grid md:grid-cols-2 gap-6">
+			{items.map((project, index) => (
+				<div class="card p-6 hover:scale-[1.02] transition-transform duration-300 group">
+					<div class="flex items-start gap-4">
+						{project.logoUrl && (
+							<div class="shrink-0">
+								<Image
+									src={getImageFromAssets(project.logoUrl)}
+									alt={`Logo - ${project.title}`}
+									class="rounded-xl shadow-md w-14 h-14 object-contain bg-white p-1"
+									width={56}
+									height={56}
+									loading={index < 2 ? 'eager' : 'lazy'}
+								/>
+							</div>
+						)}
+						<div class="flex-1 min-w-0">
+							<div class="flex items-start justify-between gap-2">
+								<h3 class="font-semibold text-stone-900 dark:text-stone-100 text-lg leading-tight">
+									{project.title}
+								</h3>
+							</div>
+
+							{project.date && (
+								<p class="text-stone-500 dark:text-stone-500 text-sm mt-1">
+									<iconify-icon icon="carbon:calendar" width="14" height="14" class="inline mr-1" />
+									{project.date}
+								</p>
+							)}
+
+							<p class="text-stone-600 dark:text-stone-400 text-sm mt-3 leading-relaxed line-clamp-3">
+								{project.description}
+							</p>
+
+							{project.skills && project.skills.length > 0 && (
+								<div class="mt-4">
+									<div class="flex flex-wrap gap-1.5">
+										{project.skills.slice(0, 4).map((skill: string) => (
+											<span class="px-2 py-0.5 text-xs rounded-full bg-stone-100 dark:bg-stone-700 text-stone-600 dark:text-stone-300">
+												{skill}
+											</span>
+										))}
+										{project.skills.length > 4 && (
+											<span class="px-2 py-0.5 text-xs rounded-full bg-stone-200 dark:bg-stone-600 text-stone-500 dark:text-stone-400">
+												+{project.skills.length - 4}
+											</span>
 										)}
 									</div>
 								</div>
-								
-								<p
-									class="text-stone-600 dark:text-stone-400 leading-relaxed"
-									set:html={project.description}
-								/>
-							</div>
-
-							<Skills list={project.skills || []} />
-
-							{(project.androidUrl || project.iosUrl) && (
-								<MobileStoreBadges
-									androidUrl={project.androidUrl}
-									iosUrl={project.iosUrl}
-								/>
 							)}
 						</div>
-
-						{(project.demoImage || project.demoVideo || project.demoIframe) && (
-							<div class="space-y-4">
-								{project.demoIframe && (
-									<iframe
-										class="w-full h-[500px] rounded-xl bg-stone-100 dark:bg-stone-800 shadow-inner"
-										loading="lazy"
-										title={`Demo - ${project.title}`}
-										id={`iframe-${project.title.replace(/\s+/g, '-').toLowerCase()}`}
-										data-src={project.demoIframe}
-									/>
-								)}
-								{project.demoImage && (
-									<a
-										href={project.url}
-										target="_blank"
-										rel="noopener noreferrer"
-										class="block group/image"
-									>
-										<Image
-											height={400}
-											src={getImageFromAssets(project.demoImage)}
-											alt={`Demo - ${project.title}`}
-											class="rounded-xl shadow-lg group-hover/image:shadow-xl transition-shadow duration-300 w-full object-cover"
-											loading="lazy"
-										/>
-									</a>
-								)}
-								{project.demoVideo && (
-									<a
-										href={project.url}
-										aria-label={`Demo - ${project.title}`}
-										target="_blank"
-										rel="noopener noreferrer"
-										class="block group/video"
-									>
-										<video
-											src={project.demoVideo}
-											class="rounded-xl aspect-video w-full object-cover shadow-lg group-hover/video:shadow-xl transition-shadow duration-300"
-											height={300}
-											autoplay
-											loop
-											muted
-										/>
-									</a>
-								)}
-								{project.demoDescription && (
-									<p
-										class="text-xs text-stone-500 dark:text-stone-400 text-center italic"
-										set:html={project.demoDescription}
-									/>
-								)}
-							</div>
-						)}
 					</div>
 				</div>
-			))
-		}
+			))}
 		</div>
 	</div>
 </section>
-
-<script>
-	// Load iframes after the page loads to not affect lighthouse score
-	document.addEventListener('DOMContentLoaded', () => {
-		const iframes = document.querySelectorAll('iframe[data-src]');
-		
-		iframes.forEach(iframe => {
-			const src = iframe.getAttribute('data-src');
-			if (src && iframe instanceof HTMLIFrameElement) {
-				iframe.src = src;
-				iframe.removeAttribute('data-src');
-			}
-		});
-	});
-</script>
