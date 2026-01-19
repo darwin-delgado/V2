@@ -87,26 +87,28 @@ import me from '@/data/me.json'
 
 					<div class='space-y-4 mb-8'>
 						<a
-							href={`mailto:${me.email}`}
-							class='flex items-center gap-3 text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-200 group'
-						>
-							<Icon
-								name='carbon:email'
-								class='size-4 text-stone-400 group-hover:text-stone-600 dark:group-hover:text-stone-300 transition-colors duration-200'
-							/>
-							<span class='text-sm'>Email</span>
-						</a>
-						<a
-							href={me.calcom}
+							href={`https://linkedin.com/in/${me.linkedin}`}
 							target='_blank'
 							rel='noopener noreferrer'
 							class='flex items-center gap-3 text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-200 group'
 						>
 							<Icon
-								name='carbon:calendar'
+								name='carbon:logo-linkedin'
 								class='size-4 text-stone-400 group-hover:text-stone-600 dark:group-hover:text-stone-300 transition-colors duration-200'
 							/>
-							<span class='text-sm'>Schedule a call</span>
+							<span class='text-sm'>LinkedIn</span>
+						</a>
+						<a
+							href={`https://github.com/${me.github}`}
+							target='_blank'
+							rel='noopener noreferrer'
+							class='flex items-center gap-3 text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors duration-200 group'
+						>
+							<Icon
+								name='carbon:logo-github'
+								class='size-4 text-stone-400 group-hover:text-stone-600 dark:group-hover:text-stone-300 transition-colors duration-200'
+							/>
+							<span class='text-sm'>GitHub</span>
 						</a>
 					</div>
 
