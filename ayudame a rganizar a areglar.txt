@@ -1,7 +1,0 @@
-ayudame a rganizar a areglar mejor esto   Soy un ingeniero especializado en Red Hat Enterprise Linux, realizo la de OS con  automatización con Ansible y tareas rutinarias con  Bash scripting, mi dia a dia en la shell  se basa en  Docker, Terraform, Git, Azure DevOps,  pipelines CI/CD, AWS, Azure,  desplegando infraestructura en la nube y entornos híbridos.
-
-Actualmente en Banco Unión S.A. administro y despliego infraestructura en Azure, administracion de la infra ompremise  server redhat linux y server windows, Gestiono el clúster de Oracle 19c sobre KVM oracle linux : renovación de los  certificados del cluster y ovirt-engine  , presentación de LUNs, administracion de VM, configuración LVM etc... . Automatizo el parchado y despliegue update y o creacion de usuarios packages en   servidores Linux y Windows con Ansible vía SSH y WinRM https, ejecuto migraciones de RHEL 7 a RHEL 9, modernizo aplicaciones legacy a contenedores Docker etc..
-
-Anteriormente gestioné un datacenter completos en GNP - Grupo Nacional de Proyectos: switching Cisco  CCNA-CCNP y Aruba, virtualización con Proxmox,   vm LINUX backup para VMs, almacenamiento NAS, firewalls PfSense en alta disponibilidad, stack de core y telefonía corporativa.
-
-Fuera del trabajo produzco musica, estudio constantemente y comparto  videos para YouTube sobre infraestructura, Linux y tecnología.       
